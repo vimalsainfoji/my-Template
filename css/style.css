@@ -1,22 +1,31 @@
 /* ===== GLOBAL ===== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #f8f9fc;
     color: #333;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .section-padding {
-    padding: 120px 0;
+    padding: 120px 20px;
 }
 
 h1, h2, h3, h4, h5 {
     font-weight: 600;
+    line-height: 1.3;
 }
 
 p {
     color: #666;
+    line-height: 1.6;
 }
 
 /* ===== NAVBAR ===== */
@@ -26,6 +35,7 @@ p {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     transition: 0.4s;
+    padding: 15px 20px;
 }
 
 .navbar-brand {
@@ -65,20 +75,26 @@ p {
 /* ===== HERO SECTION ===== */
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
     url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')
     center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
 .hero h1 {
     font-size: 55px;
     font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .hero h4 {
     margin-top: 15px;
     font-weight: 400;
+    font-size: 20px;
 }
 
 .hero p {
@@ -93,28 +109,40 @@ p {
     border-radius: 50px;
     padding: 12px 30px;
     transition: 0.3s;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .btn-dark:hover {
     transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .btn-outline-dark {
     border-radius: 50px;
     padding: 12px 30px;
     transition: 0.3s;
+    font-weight: 600;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent;
+    color: #000;
 }
 
 .btn-outline-dark:hover {
     background: #000;
     color: #fff;
+    transform: translateY(-3px);
 }
 
 /* ===== SKILLS ===== */
 
 .skill-card {
     background: #fff;
-    padding: 35px;
+    padding: 35px 25px;
     border-radius: 20px;
     text-align: center;
     transition: 0.4s;
@@ -124,6 +152,12 @@ p {
 .skill-card i {
     font-size: 35px;
     margin-bottom: 15px;
+    color: #333;
+}
+
+.skill-card h5 {
+    margin: 15px 0 10px 0;
+    font-size: 18px;
 }
 
 .skill-card:hover {
@@ -138,11 +172,15 @@ p {
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
 }
 
 .project-card img {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
     transition: 0.4s;
+    display: block;
 }
 
 .project-card:hover img {
@@ -166,37 +204,53 @@ p {
 /* ===== CTA SECTION ===== */
 
 .cta {
-    padding: 100px 0;
+    padding: 100px 20px;
     background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
     url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80')
     center/cover no-repeat;
     text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cta h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
 }
 
 /* ===== FOOTER ===== */
 
 .footer {
     background: #111;
-    padding: 50px 0;
+    padding: 50px 20px;
     color: #fff;
+    text-align: center;
 }
 
 .footer a {
     color: #fff;
     margin: 0 10px;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .footer a:hover {
     opacity: 0.7;
+    color: #ffc107;
 }
 
 /* ===== PROJECT DETAIL PAGE ===== */
 
 .project-detail img {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
     transition: 0.4s;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
 }
 
 .project-detail img:hover {
@@ -205,23 +259,56 @@ p {
 
 .project-detail ul li {
     margin-bottom: 8px;
+    line-height: 1.8;
 }
 
-/* ===== MOBILE RESPONSIVE FIX ===== */
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero h4 {
+        font-size: 18px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (max-width: 768px) ===== */
 
 @media (max-width: 768px) {
-
     body {
-        padding-top: 70px;
+        padding-top: 60px;
     }
 
     .section-padding {
-        padding: 70px 0;
+        padding: 60px 15px;
+    }
+
+    .custom-navbar {
+        padding: 12px 15px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .custom-navbar .nav-link {
+        margin-left: 15px;
+        font-size: 14px;
     }
 
     .hero {
-        height: auto;
-        padding: 120px 20px;
+        min-height: auto;
+        padding: 80px 15px;
         text-align: center;
     }
 
@@ -230,14 +317,167 @@ p {
     }
 
     .hero h4 {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .btn-dark, .btn-outline-dark {
+        padding: 10px 25px;
+        font-size: 14px;
+        margin-top: 10px;
     }
 
     .skill-card {
-        padding: 25px;
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
+
+    .skill-card i {
+        font-size: 30px;
+    }
+
+    .skill-card h5 {
+        font-size: 16px;
     }
 
     .project-card {
         margin-bottom: 20px;
+    }
+
+    .project-overlay {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .cta {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        padding: 40px 15px;
+    }
+
+    .footer a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+}
+
+/* ===== SMALL MOBILE (max-width: 480px) ===== */
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .custom-navbar .nav-link {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 60px 12px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .hero h4 {
+        font-size: 14px;
+    }
+
+    .hero p {
+        font-size: 13px;
+        margin: 15px auto;
+    }
+
+    .btn-dark, .btn-outline-dark {
+        padding: 10px 20px;
+        font-size: 12px;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .section-padding {
+        padding: 40px 12px;
+    }
+
+    .skill-card {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+
+    .skill-card i {
+        font-size: 28px;
+    }
+
+    .skill-card h5 {
+        font-size: 15px;
+    }
+
+    h1, h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .cta h2 {
+        font-size: 22px;
+    }
+
+    .project-detail ul li {
+        font-size: 13px;
+    }
+}
+
+/* ===== EXTRA SMALL MOBILE (max-width: 360px) ===== */
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .custom-navbar .nav-link {
+        margin-left: 5px;
+        font-size: 11px;
+    }
+
+    .btn-dark, .btn-outline-dark {
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+
+    .skill-card {
+        padding: 15px 10px;
+    }
+
+    .section-padding {
+        padding: 30px 10px;
     }
 }
